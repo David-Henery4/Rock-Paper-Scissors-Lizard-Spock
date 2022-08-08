@@ -1,9 +1,12 @@
-
+import {Header, PreGame, Game, Footer} from "./layouts/index";
 
 function App() {
   return (
-    <div className="App">
-      app
+    <div className="App app-layout">
+      <Header/>
+      <PreGame/>
+      {/* <Game/> */}
+      <Footer/>
     </div>
   );
 }
