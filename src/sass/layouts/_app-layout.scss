@@ -1,3 +1,15 @@
+.app-page{
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle farthest-side at 50% 0%, $backgroundLight, $backgroundDark);
+    // backdrop-filter: blur(100px);
+}
+
 .app-layout{
     padding: 2.5rem;
+    height: 100%;
+    width: 100%; // for now
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(12,1fr);
 }

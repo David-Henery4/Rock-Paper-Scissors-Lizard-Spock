@@ -5,7 +5,16 @@ import { Pent, Lizard, Paper, Rock, Scissors, Spock } from "../SVGs/svgs";
 // An Image or svg
 
 const PreGame = () => {
-  return <div className="pregame">{/* <Pent/> */}</div>;
-};
+  return( 
+    <div className="pregame">
+      <Pent/>
+      <Lizard/>
+      <Paper/>
+      <Rock/>
+      <Scissors/>
+      <Spock/>
+    </div>
+  )
+}
 
 export default PreGame;
