@@ -9,6 +9,8 @@
     padding: 2.5rem;
     height: 100%;
     width: 100%; // for now
+    max-width: 480px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: repeat(12,1fr);
