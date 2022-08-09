@@ -11,9 +11,10 @@
     &__title{
         color: $scoreText;
         letter-spacing: 1px;
+        font-size: .9rem;
     }
     &__number{
-        font-size: 3.5rem;
+        font-size: 3rem;
         color: $headerOutline;
     }
 }

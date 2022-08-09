@@ -6,7 +6,7 @@
 }
 
 .app-layout{
-    padding: 2.5rem;
+    padding: 25px;
     height: 100%;
     width: 100%; // for now
     max-width: 480px;
@@ -14,4 +14,9 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: repeat(12,1fr);
+    @include respond (desk){
+        max-width: 1560px;
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-rows: repeat(16,1fr);
+    }
 }

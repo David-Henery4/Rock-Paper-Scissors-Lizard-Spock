@@ -9,6 +9,11 @@
     grid-template-rows: repeat(16, 1fr);
     justify-items: center;
     align-items: center;
+    @include respond(desk){
+        max-width: 420px;
+        grid-column: 4/14;
+        grid-row: 4/-1;
+    }
     &__pent{
         // font-size: 1rem;
         width: 100%;

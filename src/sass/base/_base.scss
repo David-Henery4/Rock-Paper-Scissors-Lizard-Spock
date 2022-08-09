@@ -8,4 +8,10 @@
 
 html{
     font-size: 62.5%; // 1rem = 10px
+    @include respond(tab){
+        font-size: 75%; // 1rem = 12px
+    }
+    @include respond (desk){
+        font-size: 100%; // 1rem = 14px
+    }
 }
