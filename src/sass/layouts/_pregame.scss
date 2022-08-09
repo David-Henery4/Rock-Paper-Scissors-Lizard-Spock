@@ -68,8 +68,8 @@
 }
 
 .icon{
-    height: 75%;
-    width: 75%;
+    height: 80%;
+    width: 80%;
     // padding: 1rem;
     border-radius: 50%;
     background-color: white;
@@ -79,5 +79,27 @@
         // height: 5rem;
         width: 3rem;
         // font-size: 2rem;
+    }
+}
+
+
+// Classes added during the game!
+.icon-wrap-active{
+    height: 12rem;
+    width: 12rem;
+    @include respond (desk){
+        height: 17rem;
+        width: 17rem;
+    }
+}
+
+.icon-active{
+    svg{
+        width: 4rem;
+    }
+    @include respond (desk){
+        svg{
+            width: 7rem;
+        }
     }
 }

@@ -5,8 +5,8 @@ function App() {
     <div className="App app-page">
       <div className="app-layout">
         <Header />
-        <PreGame />
-        {/* <Game/> */}
+        {/* <PreGame /> */}
+        <Game/>
         <Footer />
       </div>
     </div>
