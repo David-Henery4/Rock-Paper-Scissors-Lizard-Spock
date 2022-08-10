@@ -8,8 +8,8 @@ function App() {
         <Header />
         <RulesSmall/>
         <RulesLarge/>
-        {/* <PreGame /> */}
-        <Game/>
+        <PreGame />
+        {/* <Game/> */}
         <Footer />
       </div>
     </div>
