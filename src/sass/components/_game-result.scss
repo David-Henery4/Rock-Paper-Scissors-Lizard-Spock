@@ -9,7 +9,10 @@
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
-    // display: none; // temp (component will be rendered when game is over)
+    display: none; // temp (component will be rendered when game is over) Decided by state
+    @include respond (desk){
+        grid-row: 7/12;
+    }
     &__title{
         font-size: 50px;
         color: white;
@@ -27,8 +30,10 @@
 
 // OUTCOME ACTIVE CLASS
 
-.outcome-active-result{
-    @include respond (desk){
-        grid-row: 7/12;
-    }
-}
+// not needed
+
+// .outcome-active-result{
+//     @include respond (desk){
+//         grid-row: 7/12;
+//     }
+// }

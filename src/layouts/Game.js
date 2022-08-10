@@ -1,14 +1,14 @@
 import React from 'react'
-import { Result } from '../components';
+import { Result, Placeholder } from '../components';
 import { Lizard, Paper, Rock, Scissors, Spock } from "../SVGs/svgs";
 
 const Game = () => {
   return (
-    <div className="game outcome-active">
-      {/* PLAYERS */}
-
+    // WILL ADD "outcome-active" WHEN OUTCOME ACTIVE
+    <div className="game">
       {/* Player One */}
-      <div className="playerOne playerOne-outcome-active">
+      {/* WILL ADD "playerOne-outcome-active" WHEN OUTCOME ACTIVE */}
+      <div className="playerOne">
         <p className="player__title--desk">THE HOUSE PICKED</p>
         <div className="icon-wrap icon-wrap-active icon-wrap-lizard">
           <div className="icon icon-active">
@@ -18,18 +18,22 @@ const Game = () => {
         <p className="player__title">THE HOUSE PICKED</p>
       </div>
 
-      {/* div-className="player-placeHolder" */}
+      
 
       {/* Player Two */}
-      <div className="playerTwo playerTwo-outcome-active">
+      {/* WILL ADD "playerTwo-outcome-active" WHEN OUTCOME ACTIVE */}
+
+      <div className="playerTwo">
         <p className="player__title--desk">THE HOUSE PICKED</p>
-        <div className="icon-wrap icon-wrap-spock icon-wrap-active">
+        <Placeholder/>
+        {/* <div className="icon-wrap icon-wrap-spock icon-wrap-active">
           <div className="icon icon-active">
             <Spock />
           </div>
-        </div>
+        </div> */}
         <p className="player__title">THE HOUSE PICKED</p>
       </div>
+
       {/* RESULT */}
       <Result />
     </div>
