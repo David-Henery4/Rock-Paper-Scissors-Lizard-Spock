@@ -1,12 +1,13 @@
 import React from 'react'
 // import { Lizard } from '../SVGs/svgs'
 import { useDispatch } from 'react-redux';
-import { handlePlayerSelection } from '../toolkit/features/game/gameSlice';
+import { handlePlayerSelection, handleHouseSelection } from '../toolkit/features/game/gameSlice';
 
 const PreGameOption = (choice) => {
   // NEED the ".icon" for the svg component
   const { preGameGridPos, colors, id,  } = choice;
   const dispatch = useDispatch()
+  
   //
   return (
     <div
@@ -14,7 +15,12 @@ const PreGameOption = (choice) => {
       style={{
         background: `linear-gradient(${colors.colorLight}, ${colors.colorDark})`,
       }}
-      onClick={() => dispatch(handlePlayerSelection(id))}
+      onClick={() => {
+        dispatch(handlePlayerSelection(id))
+        setTimeout(() => {
+          dispatch(handleHouseSelection())
+        }, 3000)
+      }}
     >
       <div className="icon">
         <choice.icon/>

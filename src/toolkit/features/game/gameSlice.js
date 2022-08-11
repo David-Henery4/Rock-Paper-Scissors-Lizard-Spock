@@ -9,7 +9,8 @@ const initialState = {
   hasGameFinished: false,
   options: playerOptions, // []
   playersChoice: {}, // []
-  houseChoice: [],
+  houseChoice: {}, // []
+  houseChoosing: false,
 };
 
 const gameSlice = createSlice({
@@ -21,12 +22,18 @@ const gameSlice = createSlice({
         state.playersChoice = team
         state.hasGameStarted = true
         state.isPreGame = false
+        state.houseChoosing = true
     },
+    handleHouseSelection: (state) => {
+        const random = Math.floor(Math.random() * state.options.length);
+        state.houseChoice = state.options[random]
+        state.houseChoosing = false
+    }
   },
 });
 
 
-export const {handlePlayerSelection} = gameSlice.actions
+export const {handlePlayerSelection, handleHouseSelection} = gameSlice.actions
 
 export default gameSlice.reducer
 

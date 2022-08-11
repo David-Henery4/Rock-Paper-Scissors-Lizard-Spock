@@ -6,7 +6,6 @@ import { PreGameOption } from "../components";
 import { useDispatch, useSelector } from "react-redux";
 
 
-
 const PreGame = () => {
   const {options} = useSelector(store => store.game)
 

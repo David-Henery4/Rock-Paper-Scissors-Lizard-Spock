@@ -5,6 +5,8 @@ import Placeholder from "./Placeholder";
 import RulesSmall from "./RulesSmall";
 import RulesLarge from "./RulesLarge";
 import PreGameOption from "./PreGameOption";
+import PlayerOne from "./PlayerOne";
+import PlayerTwo from "./PlayerTwo";
 export { 
     Names,
     Score,
@@ -13,4 +15,6 @@ export {
     RulesSmall,
     RulesLarge,
     PreGameOption,
+    PlayerOne,
+    PlayerTwo
 };
