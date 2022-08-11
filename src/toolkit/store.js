@@ -6,5 +6,12 @@ export const store = configureStore({
     reducer: {
         modal: modalReducer,
         game: gameReducer,
+    },
+    middleware: (getDefaultMiddleware) => {
+        // can make this more specific
+        // come back to
+        return getDefaultMiddleware({
+          serializableCheck: false,
+        })
     }
 })

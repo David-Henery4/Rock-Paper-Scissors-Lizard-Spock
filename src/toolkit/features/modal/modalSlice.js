@@ -5,14 +5,15 @@ const initialState ={
 }
 
 const modalSlice = createSlice({
-    name: "modal",
-    initialState,
-    reducers: {
-        toggleRules: (state) => {
-            state.isRulesActive = !state.isRulesActive
-        }
-    }
-})
+  name: "modal",
+  initialState,
+  reducers: {
+    toggleRules: (state) => {
+      console.log(state.isRulesActive)
+      state.isRulesActive = !state.isRulesActive;
+    },
+  },
+});
 
 export const {toggleRules} = modalSlice.actions
 
