@@ -14,7 +14,7 @@ const Game = () => {
       {/* Player Two */}
       <PlayerTwo player= {houseChoice}/>
       {/* RESULT - rendered when outcome active*/}
-      <Result />
+      <Result player={playersChoice} house={houseChoice} />
     </div>
   );
 }
