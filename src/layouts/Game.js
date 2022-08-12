@@ -5,16 +5,18 @@ import { useSelector } from "react-redux";
 import {PlayerOne, PlayerTwo} from "../components";
 
 const Game = () => {
-  const { playersChoice, houseChoice } = useSelector((store) => store.game);
+  const { playersChoice, houseChoice, hasGameFinished } = useSelector(
+    (store) => store.game
+  );
   return (
     // WILL ADD "outcome-active" WHEN OUTCOME ACTIVE
-    <div className="game">
+    <div className={hasGameFinished ? "outcome-active game" : "game"}>
       {/* Player One */}
-      <PlayerOne player = {playersChoice}/>
+      <PlayerOne player={playersChoice} />
       {/* Player Two */}
-      <PlayerTwo player= {houseChoice}/>
+      <PlayerTwo player={houseChoice} />
       {/* RESULT - rendered when outcome active*/}
-      <Result player={playersChoice} house={houseChoice} />
+      {hasGameFinished && <Result player={playersChoice} house={houseChoice} />}
     </div>
   );
 }

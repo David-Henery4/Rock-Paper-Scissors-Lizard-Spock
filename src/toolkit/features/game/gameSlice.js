@@ -29,15 +29,23 @@ const gameSlice = createSlice({
         const random = Math.floor(Math.random() * state.options.length);
         state.houseChoice = state.options[random]
         state.houseChoosing = false
+        // state.hasGameFinished = true;
+        // setInterval(() => {
+        //   state.hasGameFinished = true;
+        // }, 1500);
+    },
+    handleGameFinished: (state) => {
+      state.hasGameFinished = true;
     },
     handleGameOutcome: (state, {payload}) => {
-      state.hasGameFinished = true
-      if (payload === "win"){
-        state.score = + 1
+      if (payload === "you win"){
+        console.log(state.score)
+        state.score += 1
         state.result = payload
       }
-      if (payload === "lose"){
-        state.score = - 1
+      if (payload === "you lose"){
+        console.log(state.score);
+        state.score -= 1
         if (state.score <= 0) {
           state.score = 0;
         }
@@ -46,12 +54,20 @@ const gameSlice = createSlice({
       if (payload === "draw"){
         state.result = payload;
       }
+    },
+    handlePlayAgain: (state) => {
+      state.isPreGame = true
+      state.hasGameFinished = false
+      state.hasGameStarted = false
+      state.playersChoice = {}
+      state.houseChoice = {}
+      state.result = ""
     }
   },
 });
 
 
-export const { handlePlayerSelection, handleHouseSelection, handleGameOutcome } =
+export const { handlePlayerSelection, handleHouseSelection, handleGameOutcome, handlePlayAgain, handleGameFinished } =
   gameSlice.actions;
 
 export default gameSlice.reducer

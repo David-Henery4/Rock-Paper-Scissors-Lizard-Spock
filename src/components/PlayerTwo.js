@@ -6,9 +6,11 @@ import { useSelector } from "react-redux";
 
 const PlayerTwo = ({player}) => {
     const {colors} = player
-    const { houseChoosing } = useSelector((store) => store.game)
+    const { houseChoosing, hasGameFinished } = useSelector(
+      (store) => store.game
+    );
   return (
-    <div className="playerTwo">
+    <div className={hasGameFinished ? "playerTwo-outcome-active playerTwo" : "playerTwo"}>
       <p className="player__title--desk">THE HOUSE PICKED</p>
       {houseChoosing ? (
         <Placeholder />

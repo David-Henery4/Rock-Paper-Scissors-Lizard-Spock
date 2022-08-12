@@ -1,7 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { handleGameOutcome } from "../toolkit/features/game/gameSlice";
+import {
+  handleGameOutcome,
+  handlePlayAgain,
+} from "../toolkit/features/game/gameSlice";
 import { checkforSpock, checkforLizard, checkforPaper, checkforRock, checkforScissors } from "../logicFunctions/logic";
 
 // sort the deciding game logic here
@@ -10,6 +13,7 @@ import { checkforSpock, checkforLizard, checkforPaper, checkforRock, checkforSci
 
 const Result = ({player, house}) => {
   const dispatch = useDispatch()
+  const {result} = useSelector(store => store.game)
   console.log(player)
   console.log(house)
   const {name: playerName} = player
@@ -43,14 +47,18 @@ const Result = ({player, house}) => {
     }
   }
   //
+  const playAgain = () => {
+    dispatch(handlePlayAgain());
+  }
+  //
   useEffect(() => {
     handleGameLogic()
   }, [houseName])
   //
   return (
     <div className="result">
-      <h4 className="result__title">YOU WIN</h4>
-      <button className="result__btn">PLAY AGAIN</button>
+      <h4 className="result__title">{result.toUpperCase()}</h4>
+      <button className="result__btn" onClick={playAgain}>PLAY AGAIN</button>
     </div>
   );
 };

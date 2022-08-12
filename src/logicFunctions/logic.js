@@ -10,11 +10,11 @@ export const checkforSpock = (playerName, houseName) => {
     (playerName === "spock" && houseName === "scissors") ||
     houseName === "rock"
   ) {
-    return "win"
+    return "you win"
   }
   // (Lose)
   if (houseName === "paper" || houseName === "lizard"){
-    return "lose"
+    return "you lose"
   }
 };
 
@@ -29,11 +29,11 @@ export const checkforLizard = (playerName,houseName) => {
     (playerName === "lizard" && houseName === "spock") ||
     houseName === "paper"
   ) {
-    return "win"
+    return "you win"
   }
   // (Lose)
   if (houseName === "scissors" || houseName === "rock"){
-    return "lose"
+    return "you lose"
   }
 }
 
@@ -48,11 +48,11 @@ export const checkforRock = (playerName, houseName) => {
     (playerName === "rock" && houseName === "lizard") ||
     houseName === "scissors"
   ) {
-    return "win"
+    return "you win"
   }
   // (Lose)
   if (houseName === "paper" || houseName === "spock") {
-    return "lose"
+    return "you lose"
   }
 };
 
@@ -67,11 +67,11 @@ export const checkforPaper = (playerName, houseName) => {
     (playerName === "paper" && houseName === "rock") ||
     houseName === "spock"
   ) {
-    return "win"
+    return "you win"
   }
   // (Lose)
   if (houseName === "scissors" || houseName === "lizard") {
-    return "lose"
+    return "you lose"
   }
 };
 
@@ -86,10 +86,10 @@ export const checkforScissors = (playerName, houseName) => {
     (playerName === "scissors" && houseName === "lizard") ||
     houseName === "paper"
   ) {
-    return "win"
+    return "you win"
   }
   // (Lose)
   if (houseName === "spock" || houseName === "rock") {
-    return "lose"
+    return "you lose"
   }
 };

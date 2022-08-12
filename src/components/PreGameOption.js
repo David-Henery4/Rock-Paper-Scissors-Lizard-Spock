@@ -1,7 +1,7 @@
 import React from 'react'
 // import { Lizard } from '../SVGs/svgs'
 import { useDispatch } from 'react-redux';
-import { handlePlayerSelection, handleHouseSelection } from '../toolkit/features/game/gameSlice';
+import { handlePlayerSelection, handleHouseSelection, handleGameFinished } from '../toolkit/features/game/gameSlice';
 
 const PreGameOption = (choice) => {
   // NEED the ".icon" for the svg component
@@ -20,6 +20,9 @@ const PreGameOption = (choice) => {
         setTimeout(() => {
           dispatch(handleHouseSelection())
         }, 3000)
+        setTimeout(() => {
+          dispatch(handleGameFinished())
+        },4500)
       }}
     >
       <div className="icon">

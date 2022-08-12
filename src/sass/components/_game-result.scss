@@ -9,7 +9,7 @@
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
-    display: none; // temp (component will be rendered when game is over) Decided by state
+    // display: none; // temp (component will be rendered when game is over) Decided by state
     @include respond (desk){
         grid-row: 7/12;
     }
