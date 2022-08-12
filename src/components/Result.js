@@ -7,9 +7,6 @@ import {
 } from "../toolkit/features/game/gameSlice";
 import { checkforSpock, checkforLizard, checkforPaper, checkforRock, checkforScissors } from "../logicFunctions/logic";
 
-// sort the deciding game logic here
-// dont forget to add classes to the other components, when "hasGameFinished" state boolean changes
-// also add and remove score (add = win, remove = lose, draw = nadda)
 
 const Result = ({player, house}) => {
   const dispatch = useDispatch()
@@ -52,7 +49,8 @@ const Result = ({player, house}) => {
   }
   //
   useEffect(() => {
-    handleGameLogic()
+    handleGameLogic();
+    // eslint-disable-next-line
   }, [houseName])
   //
   return (

@@ -1,6 +1,5 @@
 import React from 'react'
-import { Result, Placeholder } from '../components';
-import { Lizard, Paper, Rock, Scissors, Spock } from "../SVGs/svgs";
+import { Result} from '../components';
 import { useSelector } from "react-redux";
 import {PlayerOne, PlayerTwo} from "../components";
 

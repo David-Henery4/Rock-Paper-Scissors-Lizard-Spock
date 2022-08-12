@@ -13,20 +13,21 @@ const PreGameOption = (choice) => {
     <div
       className={`${preGameGridPos} icon-wrap`}
       style={{
-        background: `linear-gradient(${colors.colorLight}, ${colors.colorDark})`,
+        background: `linear-gradient(${colors.colorDark}, ${colors.colorLight})`,
+        borderBottom: `0.7em solid ${colors.shadowColor}`,
       }}
       onClick={() => {
-        dispatch(handlePlayerSelection(id))
+        dispatch(handlePlayerSelection(id));
         setTimeout(() => {
-          dispatch(handleHouseSelection())
-        }, 3000)
+          dispatch(handleHouseSelection());
+        }, 3000);
         setTimeout(() => {
-          dispatch(handleGameFinished())
-        },4500)
+          dispatch(handleGameFinished());
+        }, 4500);
       }}
     >
       <div className="icon">
-        <choice.icon/>
+        <choice.icon />
       </div>
     </div>
   );

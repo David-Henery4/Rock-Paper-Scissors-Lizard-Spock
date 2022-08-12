@@ -9,7 +9,12 @@ const RulesLarge = () => {
     const {isRulesActive} = useSelector(store => store.modal)
     return (
       <>
-        {isRulesActive && <div className='overlay'></div>}
+        {isRulesActive && (
+          <div
+            onClick={() => dispatch(toggleRules())}
+            className="overlay"
+          ></div>
+        )}
         <div
           className={
             isRulesActive ? "rules-large rules-large-active" : "rules-large"

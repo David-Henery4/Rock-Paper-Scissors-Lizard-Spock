@@ -1,15 +1,12 @@
 .result{
     grid-row: 11/16;
     grid-column: 3/15;
-    // display: grid;
-    // place-items: center;
     padding: 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
-    // display: none; // temp (component will be rendered when game is over) Decided by state
     @include respond (desk){
         grid-row: 7/12;
     }
@@ -19,7 +16,7 @@
     }
     &__btn{
         padding: 12px 60px;
-        font-size: 12px;
+        font-size: 14px;
         color: $darkText;
         letter-spacing: 2px;
         border: none;

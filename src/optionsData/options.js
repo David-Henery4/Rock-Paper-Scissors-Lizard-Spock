@@ -12,6 +12,7 @@ const playerOptions = [
     colors: {
       colorDark: "hsl(189, 58%, 57%)",
       colorLight: "hsl(189, 59%, 53%)",
+      shadowColor: "hsl(189, 45%, 35%)",
     },
     preGameGridPos: "pregame__spock",
   },
@@ -22,6 +23,7 @@ const playerOptions = [
     colors: {
       colorDark: "hsl(261, 72%, 63%)",
       colorLight: "hsl(261, 73%, 60%)",
+      shadowColor: "hsl(261, 58%, 35%)",
     },
     preGameGridPos: "pregame__lizard",
   },
@@ -32,6 +34,7 @@ const playerOptions = [
     colors: {
       colorDark: "hsl(349, 70%, 56%)",
       colorLight: "hsl(349, 71%, 52%)",
+      shadowColor: "hsl(349, 57%, 35%)",
     },
     preGameGridPos: "pregame__rock",
   },
@@ -42,6 +45,7 @@ const playerOptions = [
     colors: {
       colorDark: "hsl(230, 89%, 65%)",
       colorLight: "hsl(230, 89%, 62%)",
+      shadowColor: "hsl(230, 76%, 35%)",
     },
     preGameGridPos: "pregame__paper",
   },
@@ -52,6 +56,7 @@ const playerOptions = [
     colors: {
       colorDark: "hsl(40, 84%, 53%)",
       colorLight: "hsl(39, 89%, 49%)",
+      shadowColor: "hsl(40, 63%, 35%)",
     },
     preGameGridPos: "pregame__scissors",
   },

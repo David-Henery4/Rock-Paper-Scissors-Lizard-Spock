@@ -14,6 +14,7 @@ const PlayerOne = ({player}) => {
         className="icon-wrap icon-wrap-active"
         style={{
           background: `linear-gradient(${colors.colorLight}, ${colors.colorDark})`,
+          borderBottom: `0.7em solid ${colors.shadowColor}`,
         }}
       >
         <div className="icon icon-active">

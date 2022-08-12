@@ -10,7 +10,11 @@ const PlayerTwo = ({player}) => {
       (store) => store.game
     );
   return (
-    <div className={hasGameFinished ? "playerTwo-outcome-active playerTwo" : "playerTwo"}>
+    <div
+      className={
+        hasGameFinished ? "playerTwo-outcome-active playerTwo" : "playerTwo"
+      }
+    >
       <p className="player__title--desk">THE HOUSE PICKED</p>
       {houseChoosing ? (
         <Placeholder />
@@ -19,6 +23,7 @@ const PlayerTwo = ({player}) => {
           className="icon-wrap icon-wrap-spock icon-wrap-active"
           style={{
             background: `linear-gradient(${colors.colorLight}, ${colors.colorDark})`,
+            borderBottom: `0.7em solid ${colors.shadowColor}`,
           }}
         >
           <div className="icon icon-active">
