@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import playerOptions from "../../../optionsData/options";
 
 const initialState = {
-  score: 0,
+  score: JSON.parse(localStorage.getItem("score")) || 0,
   isPreGame: true,
   hasGameStarted: false,
   hasGameFinished: false,
@@ -42,6 +42,7 @@ const gameSlice = createSlice({
         console.log(state.score)
         state.score += 1
         state.result = payload
+        localStorage.setItem("score", JSON.stringify(state.score))
       }
       if (payload === "you lose"){
         console.log(state.score);
@@ -50,6 +51,7 @@ const gameSlice = createSlice({
           state.score = 0;
         }
         state.result = payload;
+        localStorage.setItem("score", JSON.stringify(state.score))
       }
       if (payload === "draw"){
         state.result = payload;
