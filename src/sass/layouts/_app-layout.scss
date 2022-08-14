@@ -2,6 +2,7 @@
     height: 100vh;
     width: 100vw;
     background: radial-gradient(circle farthest-side at 50% 0%, $backgroundLight, $backgroundDark);
+    overflow: hidden;
     // backdrop-filter: blur(100px);
 }
 
@@ -11,6 +12,7 @@
     width: 100%; // for now
     max-width: 480px;
     margin: 0 auto;
+    // overflow: hidden;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: repeat(12,1fr);

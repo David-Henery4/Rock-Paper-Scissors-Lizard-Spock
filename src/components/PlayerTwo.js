@@ -2,11 +2,9 @@ import React from 'react'
 import {Placeholder} from "../components"
 import { useSelector } from "react-redux";
 
-/* WILL ADD "playerTwo-outcome-active" WHEN OUTCOME ACTIVE */
-
 const PlayerTwo = ({player}) => {
     const {colors} = player
-    const { houseChoosing, hasGameFinished } = useSelector(
+    const { houseChoosing, hasGameFinished, isHouseWinner } = useSelector(
       (store) => store.game
     );
   return (
@@ -16,22 +14,26 @@ const PlayerTwo = ({player}) => {
       }
     >
       <p className="player__title--desk">THE HOUSE PICKED</p>
-      {houseChoosing ? (
-        <Placeholder />
-      ) : (
-        <div
-          className="icon-wrap icon-wrap-spock icon-wrap-active"
-          style={{
-            background: `linear-gradient(${colors.colorLight}, ${colors.colorDark})`,
-            borderBottom: `0.7em solid ${colors.shadowColor}`,
-          }}
-        >
-          <div className="icon icon-active">
-            <player.icon />
+      <div className="winner">
+        {isHouseWinner && <div className="winner-styles winner-layer1"></div>}
+        {isHouseWinner && <div className="winner-styles winner-layer2"></div>}
+        {isHouseWinner && <div className="winner-styles winner-layer3"></div>}
+        {houseChoosing ? (
+          <Placeholder />
+        ) : (
+          <div
+            className="icon-wrap icon-wrap-spock icon-wrap-active"
+            style={{
+              background: `linear-gradient(${colors.colorLight}, ${colors.colorDark})`,
+              borderBottom: `0.7em solid ${colors.shadowColor}`,
+            }}
+          >
+            <div className="icon icon-active">
+              <player.icon />
+            </div>
           </div>
-        </div>
-      )}
-
+        )}
+      </div>
       <p className="player__title">THE HOUSE PICKED</p>
     </div>
   );

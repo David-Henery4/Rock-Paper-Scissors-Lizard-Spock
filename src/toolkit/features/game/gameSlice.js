@@ -12,6 +12,8 @@ const initialState = {
   houseChoice: {}, // []
   houseChoosing: false,
   result: "",
+  isPlayerWinner: false,
+  isHouseWinner: false
 };
 
 const gameSlice = createSlice({
@@ -29,10 +31,6 @@ const gameSlice = createSlice({
         const random = Math.floor(Math.random() * state.options.length);
         state.houseChoice = state.options[random]
         state.houseChoosing = false
-        // state.hasGameFinished = true;
-        // setInterval(() => {
-        //   state.hasGameFinished = true;
-        // }, 1500);
     },
     handleGameFinished: (state) => {
       state.hasGameFinished = true;
@@ -42,11 +40,15 @@ const gameSlice = createSlice({
         console.log(state.score)
         state.score += 1
         state.result = payload
+        state.isPlayerWinner = true
+        state.isHouseWinner = false
         localStorage.setItem("score", JSON.stringify(state.score))
       }
       if (payload === "you lose"){
         console.log(state.score);
         state.score -= 1
+        state.isPlayerWinner = false;
+        state.isHouseWinner = true;
         if (state.score <= 0) {
           state.score = 0;
         }
@@ -61,6 +63,8 @@ const gameSlice = createSlice({
       state.isPreGame = true
       state.hasGameFinished = false
       state.hasGameStarted = false
+      state.isPlayerWinner = false;
+      state.isHouseWinner = false;
       state.playersChoice = {}
       state.houseChoice = {}
       state.result = ""

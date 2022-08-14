@@ -9,6 +9,8 @@
         grid-row: 15/-1;
     }
     &__btn{
+        position: relative;
+        z-index: 15;
         background-color: transparent;
         color: white;
         font-size: 15px;

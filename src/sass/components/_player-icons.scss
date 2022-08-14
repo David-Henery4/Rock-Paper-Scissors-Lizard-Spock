@@ -1,71 +1,83 @@
-.icon-wrap{
-    height: 7.5rem;
-    width: 7.5rem;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    transition: .5s all;
-    // border-bottom: 0.5em solid #0f5177;
-    // box-shadow: 0 2px 3px #ccc;
-    &:hover{
-        cursor: pointer;
-        transform: scale(1.1);
-    }
+.icon-wrap {
+  height: 7.5rem;
+  width: 7.5rem;
+  position: relative;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: 0.5s all;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 }
 
-.icon{
-    height: 80%;
-    width: 80%;
-    border-top: 0.35em solid rgba(0,0,0,.2);
-    // padding: 1rem;
-    border-radius: 50%;
-    background-color: white;
-    display: grid;
-    place-items: center;
-    svg{
-        // height: 5rem;
-        width: 3rem;
-        // font-size: 2rem;
-    }
+.icon {
+  height: 80%;
+  width: 80%;
+  border-top: 0.35em solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  svg {
+    width: 3rem;
+  }
 }
-
 
 // Classes added during the game!
-.icon-wrap-active{
-    height: 12rem;
-    width: 12rem;
-    @include respond (desk){
-        height: 17rem;
-        width: 17rem;
-    }
+.icon-wrap-active {
+  height: 12rem;
+  width: 12rem;
+  position: relative;
+  z-index: 10;
+  @include respond(desk) {
+    height: 17rem;
+    width: 17rem;
+  }
 }
 
-.icon-active{
-    svg{
-        width: 4rem;
+.icon-active {
+  svg {
+    width: 4rem;
+  }
+  @include respond(desk) {
+    svg {
+      width: 7rem;
     }
-    @include respond (desk){
-        svg{
-            width: 7rem;
-        }
-    }
+  }
 }
 
+// WINNER STLYE RADIAL GRADIENT
+.winner {
+  position: relative;
+  &-layer1 {
+    width: 140%;
+    height: 140%;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 3;
+  }
+  &-layer2 {
+    width: 180%;
+    height: 180%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 2;
+  }
+  &-layer3 {
+    width: 240%;
+    height: 240%;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
 
-    // WERE IN THE ICON WRAP
-
-    // &-lizard{
-    //     background: linear-gradient($lizardGradientLight,$lizardGradientDark);
-    // }
-    // &-paper{
-    //     background: linear-gradient($paperGradientLight,$paperGradientDark);
-    // }
-    // &-rock{
-    //     background: linear-gradient($rockGradientLight,$rockGradientDark);
-    // }
-    // &-scissors{
-    //     background: linear-gradient($scissorsGradientLight,$scissorsGradientDark);
-    // }
-    // &-spock{
-    //     background: linear-gradient($CyanLight,$CyanDark);
-    // }
+.winner-styles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  opacity: 0.1;
+}

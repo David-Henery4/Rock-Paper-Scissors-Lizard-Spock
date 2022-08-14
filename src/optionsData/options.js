@@ -1,9 +1,5 @@
 import { Lizard, Spock, Paper, Rock, Scissors } from "../SVGs/svgs"
 
-// might have to make specific background colour for each option an inline style.
-
-// might need to change "icon" to sort out the state storing problem
-
 const playerOptions = [
   {
     id: 1,

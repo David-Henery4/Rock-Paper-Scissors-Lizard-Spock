@@ -8,7 +8,6 @@ const Game = () => {
     (store) => store.game
   );
   return (
-    // WILL ADD "outcome-active" WHEN OUTCOME ACTIVE
     <div className={hasGameFinished ? "outcome-active game" : "game"}>
       {/* Player One */}
       <PlayerOne player={playersChoice} />

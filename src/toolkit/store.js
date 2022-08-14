@@ -8,10 +8,9 @@ export const store = configureStore({
         game: gameReducer,
     },
     middleware: (getDefaultMiddleware) => {
-        // can make this more specific
-        // come back to
+        // Can make serialization more specific
         return getDefaultMiddleware({
-          serializableCheck: false,
+            serializableCheck: false,
         })
     }
 })

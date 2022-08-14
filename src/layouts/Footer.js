@@ -1,10 +1,9 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { toggleRules } from '../toolkit/features/modal/modalSlice'
 
 
 const Footer = () => {
-  // const {isRulesActive} = useSelector(store => store.modal)
   const dispatch = useDispatch()
   //
   const handleRulesClick = () => {

@@ -15,22 +15,17 @@
         color: white;
     }
     &__btn{
-        padding: 12px 60px;
+        position: relative;
+        z-index: 15;
+        padding: 12px 55px;
         font-size: 14px;
         color: $darkText;
         letter-spacing: 2px;
         border: none;
         font-family: $fontFamily;
         border-radius: 7px;
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
-
-// OUTCOME ACTIVE CLASS
-
-// not needed
-
-// .outcome-active-result{
-//     @include respond (desk){
-//         grid-row: 7/12;
-//     }
-// }
