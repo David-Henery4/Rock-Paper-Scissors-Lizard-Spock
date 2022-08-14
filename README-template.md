@@ -1,6 +1,6 @@
 # Frontend Mentor - Rock, Paper, Scissors solution
 
-This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges helps improve coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -14,9 +14,8 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+
 
 ## Overview
 
@@ -24,25 +23,19 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
 
 Users should be able to:
 
-- View the optimal layout for the game depending on their device's screen size
-- Play Rock, Paper, Scissors against the computer
-- Maintain the state of the score after refreshing the browser _(optional)_
-- **Bonus**: Play Rock, Paper, Scissors, Lizard, Spock against the computer _(optional)_
+- View the optimal layout for the game depending on their device's screen size.
+
+- Play Rock, Paper, Scissors, Lizard, Spock against the computer.
+
+- Maintain the state of the score after refreshing the browser.
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![main menu](./readme-assets/desktop/Screenshot-desktop-menu.png)
 
 ### Links
 
+(to be added)
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
@@ -51,63 +44,75 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [SASS](https://sass-lang.com) 
+- SASS Variables & Mixins
+- [React](https://reactjs.org) - JS library
+- [React Redux Toolkit](https://redux-toolkit.js.org) - State management
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I one of the main things this challenge did was to test my CSS grid skills especially when it came to positioning the icons on the menu correctly. Initially it was a bit awkward, but it definitely helped me to understand and use the grid a little bit better.
 
-To see how you can add code snippets, see below:
+In this project, i also learned about non-serializable values in redux state. I stumbled across this when i tried to store the SVG components for the different icons in the state object. This gave me the error "a non-serializable value was detected in the state". When i researched more into this issue i found out that it's not usually a good idea to store these values in the state, but there are sometimes exeptions, and that the error actually occurs in the redux store.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+Non-serializable values are: 
+ - Promises,
+ - Symbols,
+ - Maps/Sets, 
+ - functions 
+
+In my case the SVG component was stored as a symbol and in the store we can controll wether or not to accept serialized values in the state, though changing different values in the middleware property in the store and turn off the serialization check. We can do this for specific items or for the whole store. 
+
+Even though it is not advised to do this, especially in larger projects, i felt this was the best way to implement the SVG Components in the context of this project, so i turned off the serialization check via the middleware in the store.
+
+I done this because it's a small project and wouldn't have any impact on the overall application.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+export const store = configureStore({
+    reducer: {
+        modal: modalReducer,
+        game: gameReducer,
+    },
+    middleware: (getDefaultMiddleware) => {
+// Can make serialization more specific
+        return getDefaultMiddleware({
+            serializableCheck: false,
+        })
+    }
+})
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+When i was adding the circle styling around the winners icon at the end of the game, i implemented them using seperate empty divs and styled them with different opacity for each ring to create the effect. 
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I first tried to implement the styling though a css radial gradient, and i was unable to create the desired style though this. Although when i was researching into different gradient styles, i was inspired by all the different ways gradients can be used and the unique things they can be used to create and not just gradients but also css backgrounds with different blend modes, which also can used with gradients to make some pretty creative styles. I will definitely be using these different techniques in future projects.
+
+<br>
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+Here are some of the different resources i found that helped me understand the non-serialization problem i was having with storing the SVG components in the state and also some resources that inspired me about different gradients : 
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+### Redux Resources
+
+- [Redux.js](https://redux.js.org/style-guide/#do-not-put-non-serializable-values-in-state-or-actions) - Documentation that went into more detail about non-serialization and the behaviour of the state.
+
+- [redux-toolkit.js](https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data) - Similar to the above documentation but more specific to redux-toolkit.
+
+### Gradient & Blend Resources
+
+- [cssgradient.io](https://cssgradient.io) - CSS gradient generater that also contains many blog articles about gradients.
+
+- [smashing magazine](https://www.smashingmagazine.com/2022/01/css-radial-conic-gradient) - An article on different types of gradients and their use cases.
+
+- [Logrocket - Advanced effects with css blend mode](https://blog.logrocket.com/advanced-effects-with-css-background-blend-modes-4b750198522a) - An article about all the types of things you can create with blend mode (As well as using them with gradients)
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [David Henery](https://www.djhwebdevelopment.com)
+- Frontend Mentor - [@David-Henery4](https://www.frontendmentor.io/profile/David-Henery4)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

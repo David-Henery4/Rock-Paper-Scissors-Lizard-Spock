@@ -18,10 +18,10 @@ const PreGameOption = (choice) => {
         dispatch(handlePlayerSelection(id));
         setTimeout(() => {
           dispatch(handleHouseSelection());
-        }, 3000);
+        }, 1500);
         setTimeout(() => {
           dispatch(handleGameFinished());
-        }, 4500);
+        }, 3000);
       }}
     >
       <div className="icon">
