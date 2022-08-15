@@ -35,9 +35,8 @@ Users should be able to:
 
 ### Links
 
-(to be added)
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution on frontend mentor](https://www.frontendmentor.io/solutions/rockpaperscissorslizardspock-cssgrid-react-reduxtoolkit-ARyACNP_dh)
+- Live Site URL: [Rock-Paper-Scissors-Lizard-Spock](https://rock-papel-scissors-lizard-spock.netlify.app)
 
 ## My process
 

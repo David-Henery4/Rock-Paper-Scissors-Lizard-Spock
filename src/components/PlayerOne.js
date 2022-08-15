@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 const PlayerOne = ({player}) => {
     const { hasGameFinished, isPlayerWinner } = useSelector((store) => store.game);
     const {colors} = player;
-    console.log(isPlayerWinner)
   return (
     <div
       className={

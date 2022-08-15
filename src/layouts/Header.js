@@ -3,10 +3,10 @@ import {Names, Score} from "../components/index"
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <Names/>
       <Score/>
-    </div>
+    </header>
   );
 }
 

@@ -11,35 +11,28 @@ import { checkforSpock, checkforLizard, checkforPaper, checkforRock, checkforSci
 const Result = ({player, house}) => {
   const dispatch = useDispatch()
   const {result} = useSelector(store => store.game)
-  console.log(player)
-  console.log(house)
   const {name: playerName} = player
   const {name: houseName} = house
   
   const handleGameLogic = () => {
     if (playerName === "spock"){
       const result = checkforSpock(playerName,houseName)
-      console.log(result)
       dispatch(handleGameOutcome(result))
     }
     if (playerName === "lizard"){
       const result = checkforLizard(playerName, houseName);
-      console.log(result)
       dispatch(handleGameOutcome(result));
     }
     if (playerName === "rock"){
       const result = checkforRock(playerName, houseName);
-      console.log(result)
       dispatch(handleGameOutcome(result));
     }
     if (playerName === "paper"){
       const result = checkforPaper(playerName, houseName);
-      console.log(result)
       dispatch(handleGameOutcome(result));
     }
     if (playerName === "scissors"){
       const result = checkforScissors(playerName, houseName);
-      console.log(result)
       dispatch(handleGameOutcome(result));
     }
   }

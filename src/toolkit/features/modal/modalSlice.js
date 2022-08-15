@@ -9,7 +9,6 @@ const modalSlice = createSlice({
   initialState,
   reducers: {
     toggleRules: (state) => {
-      console.log(state.isRulesActive)
       state.isRulesActive = !state.isRulesActive;
     },
   },

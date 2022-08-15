@@ -37,7 +37,6 @@ const gameSlice = createSlice({
     },
     handleGameOutcome: (state, {payload}) => {
       if (payload === "you win"){
-        console.log(state.score)
         state.score += 1
         state.result = payload
         state.isPlayerWinner = true
@@ -45,7 +44,6 @@ const gameSlice = createSlice({
         localStorage.setItem("score", JSON.stringify(state.score))
       }
       if (payload === "you lose"){
-        console.log(state.score);
         state.score -= 1
         state.isPlayerWinner = false;
         state.isHouseWinner = true;

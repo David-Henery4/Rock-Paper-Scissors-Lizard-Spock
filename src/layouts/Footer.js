@@ -11,11 +11,11 @@ const Footer = () => {
   }
   //
   return (
-    <div className='footer'>
+    <footer className='footer'>
       <button className='footer__btn' onClick={handleRulesClick}>
         RULES
       </button>
-    </div>
+    </footer>
   )
 }
 

@@ -9,7 +9,7 @@ const PreGame = () => {
 
   return (
     <div className="pregame">
-      <img className="pregame__pent" src={PentSrc} alt="" />
+      <img className="pregame__pent" src={PentSrc} alt="background-pentagon" />
       {options.map((choice) => {
         const { id } = choice;
         return (
