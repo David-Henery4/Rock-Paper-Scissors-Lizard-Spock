@@ -2,7 +2,6 @@ import React from 'react'
 
 const Names = () => {
     return (
-        <h1>
         <ul className="header-names">
             <li>ROCK</li>
             <li>PAPER</li>
@@ -10,7 +9,6 @@ const Names = () => {
             <li>LIZARD</li>
             <li>SPOCK</li>
         </ul>
-        </h1>
         );
 }
 
