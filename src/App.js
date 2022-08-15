@@ -7,14 +7,14 @@ function App() {
   //
   return (
     <div className="App app-page">
-      <div className="app-layout">
+      <main className="app-layout">
         <Header />
         <RulesSmall />
         <RulesLarge />
         {isPreGame && <PreGame />}
         {hasGameStarted && <Game />}
         <Footer />
-        <div className="attribution">
+        <section className="attribution">
           Challenge by{" "}
           <a
             href="https://www.frontendmentor.io?ref=challenge"
@@ -32,8 +32,8 @@ function App() {
             David Henery
           </a>
           .
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }
