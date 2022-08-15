@@ -15,6 +15,7 @@ function App() {
         {hasGameStarted && <Game />}
         <Footer />
         <section className="attribution">
+          <h6>
           Challenge by{" "}
           <a
             href="https://www.frontendmentor.io?ref=challenge"
@@ -32,6 +33,7 @@ function App() {
             David Henery
           </a>
           .
+            </h6>
         </section>
       </main>
     </div>
